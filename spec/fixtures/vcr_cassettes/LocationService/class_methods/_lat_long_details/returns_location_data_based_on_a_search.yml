@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://www.mapquestapi.com/geocoding/v1/address?key=rPIVuFRHVjQzMy7cqGaZ8yNKzqBCdWRJ&location=Edmond,%20OK
+    uri: http://www.mapquestapi.com/geocoding/v1/address?key=<Mapquest API Key>&location=Edmond,%20OK
     body:
       encoding: US-ASCII
       string: ''
@@ -19,11 +19,11 @@ http_interactions:
       message: ''
     headers:
       Date:
-      - Sat, 17 Sep 2022 22:46:09 GMT
+      - Sat, 17 Sep 2022 23:03:44 GMT
       Content-Type:
       - application/json;charset=UTF-8
       Content-Length:
-      - '1029'
+      - '1030'
       Access-Control-Allow-Methods:
       - OPTIONS,GET,POST
       Access-Control-Allow-Origin:
@@ -35,13 +35,13 @@ http_interactions:
       Geocodetransactioncount:
       - '1'
       Last-Modified:
-      - Sat, 17 Sep 2022 22:46:09 GMT
+      - Sat, 17 Sep 2022 23:03:44 GMT
       Pragma:
       - no-cache
       Reversegeocodetransactioncount:
       - '0'
       Set-Cookie:
-      - JSESSIONID=D7E8D901229198341D39CB2320A9185C; Path=/; HttpOnly
+      - JSESSIONID=D2D10DD0B7C27C14C6D0FEE975FB6F2A; Path=/; HttpOnly
       Status:
       - success
       Transactionweight:
@@ -52,6 +52,7 @@ http_interactions:
         Inc.","imageUrl":"http://api.mqcdn.com/res/mqlogo.gif","imageAltText":"\u00A9
         2022 MapQuest, Inc."},"messages":[]},"options":{"maxResults":-1,"thumbMaps":true,"ignoreLatLngInput":false},"results":[{"providedLocation":{"location":"Edmond,
         OK"},"locations":[{"street":"","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"Edmond","adminArea5Type":"City","adminArea4":"Oklahoma
-        County","adminArea4Type":"County","adminArea3":"OK","adminArea3Type":"State","adminArea1":"US","adminArea1Type":"Country","postalCode":"","geocodeQualityCode":"A5XAX","geocodeQuality":"CITY","dragPoint":false,"sideOfStreet":"N","linkId":"282035868","unknownInput":"","type":"s","latLng":{"lat":35.65314,"lng":-97.481511},"displayLatLng":{"lat":35.65314,"lng":-97.481511},"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=rPIVuFRHVjQzMy7cqGaZ8yNKzqBCdWRJ&type=map&size=225,160&locations=35.65314,-97.481511|marker-sm-50318A-1&scalebar=true&zoom=12&rand=-292193853"}]}]}'
-  recorded_at: Sat, 17 Sep 2022 22:46:10 GMT
+        County","adminArea4Type":"County","adminArea3":"OK","adminArea3Type":"State","adminArea1":"US","adminArea1Type":"Country","postalCode":"","geocodeQualityCode":"A5XAX","geocodeQuality":"CITY","dragPoint":false,"sideOfStreet":"N","linkId":"282035868","unknownInput":"","type":"s","latLng":{"lat":35.65314,"lng":-97.481511},"displayLatLng":{"lat":35.65314,"lng":-97.481511},"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=<Mapquest
+        API Key>&type=map&size=225,160&locations=35.65314,-97.481511|marker-sm-50318A-1&scalebar=true&zoom=12&rand=-1649988188"}]}]}'
+  recorded_at: Sat, 17 Sep 2022 23:03:44 GMT
 recorded_with: VCR 6.1.0
