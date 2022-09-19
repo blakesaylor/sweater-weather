@@ -1,9 +1,11 @@
-class Weather
+class Forecast  
   attr_reader :current_weather,
               :daily_weather,
-              :hourly_weather
+              :hourly_weather,
+              :id
 
   def initialize(data)  
+    @id = nil
     # Current Weather Details to be used
     @current_weather = Hash.new
     @current_weather[:datetime] = Time.at(data[:current][:dt]).to_datetime # Current Time

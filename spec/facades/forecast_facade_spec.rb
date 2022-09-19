@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe 'WeatherFacade', :vcr do
-  it 'makes a call and returns a weather object' do
+RSpec.describe 'ForecastFacade', :vcr do
+  it 'makes a call and returns a Forecast object' do
     location_data = {
           "info": {
               "statuscode": 0,
@@ -60,16 +60,16 @@ RSpec.describe 'WeatherFacade', :vcr do
 
     location = Location.new(location_data)
 
-    weather = WeatherFacade.get_weather(location)
+    forecast = ForecastFacade.get_forecast(location)
 
-    expect(weather).to be_a Weather
-    expect(weather.current_weather).to be_a Hash
-    expect(weather.hourly_weather).to be_a Array
-    expect(weather.daily_weather).to be_a Array
+    expect(forecast).to be_a Forecast
+    expect(forecast.current_weather).to be_a Hash
+    expect(forecast.hourly_weather).to be_a Array
+    expect(forecast.daily_weather).to be_a Array
 
     # Want data for next 8 hours of weather
-    expect(weather.hourly_weather.count).to eq 8
-    weather.hourly_weather.each do |hour|
+    expect(forecast.hourly_weather.count).to eq 8
+    forecast.hourly_weather.each do |hour|
       expect(hour).to be_a Hash
       expect(hour[:time]).to be_a String
       expect(hour[:temperature]).to be_a Float
@@ -78,8 +78,8 @@ RSpec.describe 'WeatherFacade', :vcr do
     end
 
     # Want data for the next 5 days of weather
-    expect(weather.daily_weather.count).to eq 5
-    weather.daily_weather.each do |day|
+    expect(forecast.daily_weather.count).to eq 5
+    forecast.daily_weather.each do |day|
       expect(day).to be_a Hash
       expect(day[:date]).to be_a String
       expect(day[:sunrise]).to be_a DateTime
