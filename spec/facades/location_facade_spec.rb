@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'LocationFacade', :vcr do
-  it 'makes a call and returns an hash with latitude and longitude' do
+  it 'makes a call and returns a hash with latitude and longitude' do
     city = "Edmond, OK"
     location = LocationFacade.get_lat_long(city)
 
