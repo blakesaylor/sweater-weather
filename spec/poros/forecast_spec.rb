@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe Weather do
+RSpec.describe Forecast do
   it "exists" do
     attrs = {
       "lat": 35.6531,
@@ -1699,16 +1699,16 @@ RSpec.describe Weather do
       ]
     }
 
-    weather = Weather.new(attrs)
+    forecast = Forecast.new(attrs)
 
-    expect(weather).to be_a Weather
-    expect(weather.current_weather).to be_a Hash
-    expect(weather.hourly_weather).to be_a Array
-    expect(weather.daily_weather).to be_a Array
+    expect(forecast).to be_a Forecast
+    expect(forecast.current_weather).to be_a Hash
+    expect(forecast.hourly_weather).to be_a Array
+    expect(forecast.daily_weather).to be_a Array
 
     # Want data for next 8 hours of weather
-    expect(weather.hourly_weather.count).to eq 8
-    weather.hourly_weather.each do |hour|
+    expect(forecast.hourly_weather.count).to eq 8
+    forecast.hourly_weather.each do |hour|
       expect(hour).to be_a Hash
       expect(hour[:time]).to be_a String
       expect(hour[:temperature]).to be_a Float
@@ -1717,8 +1717,8 @@ RSpec.describe Weather do
     end
 
     # Want data for the next 5 days of weather
-    expect(weather.daily_weather.count).to eq 5
-    weather.daily_weather.each do |day|
+    expect(forecast.daily_weather.count).to eq 5
+    forecast.daily_weather.each do |day|
       expect(day).to be_a Hash
       expect(day[:date]).to be_a String
       expect(day[:sunrise]).to be_a DateTime

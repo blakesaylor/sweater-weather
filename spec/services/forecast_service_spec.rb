@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-describe WeatherService do
+describe ForecastService do
   context "class methods" do
-    context "#weather_details" do
-      it "returns weather data based on a search using latitude and longitude", :vcr do
+    context "#forecast_details" do
+      it "returns forecast data based on a search using latitude and longitude", :vcr do
         location_data = {
           "info": {
               "statuscode": 0,
@@ -62,7 +62,7 @@ describe WeatherService do
 
         location = Location.new(location_data)
 
-        search = WeatherService.weather_details(location)
+        search = ForecastService.forecast_details(location)
 
         expect(search).to be_a Hash
         expect(search[:lat]).to be_a Float
