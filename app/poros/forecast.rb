@@ -23,7 +23,7 @@ class Forecast
 
     # Daily weather to be used
     # Will want to start at search[:daily][1] since search[:daily][0] is the current date
-    data[:daily][1..5].each do |day|
+    data[:daily][0..4].each do |day|
       day_data = Hash.new
       day_data[:date] = Time.at(day[:dt]).strftime("%Y-%m-%e")
       day_data[:sunrise] = Time.at(day[:sunrise]).to_datetime
@@ -39,7 +39,7 @@ class Forecast
 
     # Hourly weather to be used
     # Will want to start at search[:hourly][1] since search[:hourly][0] is the current hour
-    data[:hourly][1..8].each do |hour|
+    data[:hourly][0..7].each do |hour|
       hour_data = Hash.new
       hour_data[:time] = Time.at(hour[:dt]).strftime("%H:%M:%S")
       hour_data[:temperature] = hour[:temp].to_f
