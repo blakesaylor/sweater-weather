@@ -1,7 +1,7 @@
 class BookSearchSerializer
   # include JSONAPI::Serializer
   # attributes :destination, :forecast, :total_books_found, :books
-  def self.location_weather_books(location, current_weather, total_book_count, books)
+  def self.location_weather_books(location, current_weather, books_info)
     {
         data: {
           id: nil,
@@ -12,8 +12,8 @@ class BookSearchSerializer
               summary: current_weather[:conditions],
               temperature: current_weather[:temperature].to_s + " F"
             },
-            total_books_found: total_book_count,
-            books: books
+            total_books_found: books_info[:total_hits],
+            books: books_info[:books]
           }
         }
       }

@@ -5,11 +5,16 @@ RSpec.describe 'BookFacade', :vcr do
     it 'makes a call and returns a hash with specified number of Books data' do
       title = "denver,co"
       quantity = '5'
-      books = BookFacade.get_books(title, quantity)
+      book_info = BookFacade.get_books(title, quantity)
 
-      expect(books).to be_a Array
+      expect(book_info).to be_a Hash
+      expect(book_info.keys.count).to eq 2
+      expect(book_info.keys).to include(:total_hits, :books)
 
-      books.each do |book|
+      expect(book_info[:total_hits]).to be_a Integer
+      expect(book_info[:total_hits]).to eq 38
+
+      book_info[:books].each do |book|
         expect(book).to be_a Book
 
         expect(book.title).to be_a String
@@ -33,11 +38,11 @@ RSpec.describe 'BookFacade', :vcr do
     end
   end
 
-  describe '#get_total_book_count' do
-    it 'returns the total count of books for a given search term' do
-      title = "denver,co"
-      total_books = BookFacade.get_total_book_count(title)
-      expect(total_books).to eq 38
-    end
-  end
+  # describe '#get_total_book_count' do
+  #   it 'returns the total count of books for a given search term' do
+  #     title = "denver,co"
+  #     total_books = BookFacade.get_total_book_count(title)
+  #     expect(total_books).to eq 38
+  #   end
+  # end
 end
