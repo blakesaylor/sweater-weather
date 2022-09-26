@@ -9,8 +9,9 @@ class Api::V1::BookController < ApplicationController
     total_book_count = books.count
     book_array = books[0..final_book_index]
 
+    # book_search = BookSearch.new(params[:location], current_weather, total_book_count, book_array)
 
-
+    # render json: BooksSerializer.new(book_search)
     render json: BookSearchSerializer.location_weather_books(params[:location], current_weather, total_book_count, book_array)
   end
 end
