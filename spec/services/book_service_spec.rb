@@ -7,17 +7,14 @@ describe BookService do
         location = "denver,co"
         search = BookService.book_details(location)
 
-        binding.pry
-
         expect(search).to be_a Hash
 
         expect(search[:docs]).to be_an Array
-        expect(search[:docs][0]).to be_a Hash
-        expect(search[:docs][0][:title]).to be_an String
-        expect(search[:docs][0][:publisher]).to be_an Array
-        expect(search[:docs][0][:publisher][0]).to be_a String
-
-        # Need to find ISBN
+        expect(search[:docs][1]).to be_a Hash
+        expect(search[:docs][1][:title]).to be_an String
+        expect(search[:docs][1][:publisher]).to be_an Array
+        expect(search[:docs][1][:publisher][0]).to be_a String
+        expect(search[:docs][1][:isbn]).to be_a Array
       end
     end
   end
