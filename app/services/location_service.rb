@@ -9,4 +9,9 @@ class LocationService
     response = conn.get("/geocoding/v1/address?location=#{location}")
     JSON.parse(response.body, symbolize_names: true)
   end
+  
+  def self.direction_details(origin, destination)
+    response = conn.get("/directions/v2/route?from=#{origin}&to=#{destination}")
+    JSON.parse(response.body, symbolize_names: true)
+  end
 end
