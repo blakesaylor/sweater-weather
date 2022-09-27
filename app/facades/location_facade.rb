@@ -5,10 +5,8 @@ class LocationFacade
     Location.new(location_data)
   end
 
-  def self.get_road_trip(origin, destination)
+  def self.get_road_trip(origin, destination, weather_data)
     direction_data = LocationService.direction_details(origin, destination)
-    destination_lat_long = get_lat_long(destination)
-
-    Roadtrip.new(origin, destination, direction_data, destination_lat_long)
+    Roadtrip.new(origin, destination, direction_data, weather_data)
   end
 end

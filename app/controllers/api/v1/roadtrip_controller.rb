@@ -8,7 +8,9 @@ class Api::V1::RoadtripController < ApplicationController
       }, status: 401
     else
       destination_lat_long = LocationFacade.get_lat_long(params[:destination])
-      road_trip = LocationFacade.get_road_trip(params[:origin], params[:destination])
+      weather_data = ForecastFacade.get_forecast(destination_lat_long, 48, 8)
+      road_trip = LocationFacade.get_road_trip(params[:origin], params[:destination], weather_data)
+      
       render json: RoadtripSerializer.new(road_trip)
     end
   end
