@@ -192,4 +192,5 @@ $ rails s
 
 ## Contributors
 |  | |
+| --- | --- |
 | Blake Saylor | [GitHub](https://github.com/blakesaylor) &#124; [LinkedIn](https://www.linkedin.com/in/blake-saylor/) |
