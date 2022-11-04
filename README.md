@@ -20,7 +20,7 @@ Placeholder
 
 ## Schema
 
-![Schema](https://user-images.githubusercontent.com/47160926/200009875-31137988-4fa0-4792-b536-aafbe6343868.png)
+![Schema](https://user-images.githubusercontent.com/47160926/200024641-c6a80dc0-d85d-44e8-8b26-4d9e3ad47b1b.png)
 
 ## Endpoints
 
@@ -163,7 +163,7 @@ $ git clone https://github.com/blakesaylor/sweater-weather.git
 
 2. Change to the project directory: In terminal, use `$cd` to navigate to the project directory.
 ```shell
-$ cd tea_service
+$ cd sweater-weather
 ```
 
 3. Install required Gems utilizing Bundler: <br>
