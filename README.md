@@ -6,7 +6,7 @@
 ![contributors](https://img.shields.io/badge/Contributors-1-blue)
 
 ## Table of Contents
-- [Sweater Weather Repo](#sweater-weather-repo)
+- [Sweater Weather Repository](#sweater-weather)
   - [Table of Contents](#table-of-contents)
   - [Background](#background)
   - [Schema](#schema)
